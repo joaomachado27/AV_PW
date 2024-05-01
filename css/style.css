@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    background-color: #e5e5e5;
+}
+
+.logo-uepa{
+    width: 185px;
+    height: 95px;
+}
+
+.logo-curso{
+    width: 225px;
+    height:115px;
+}
+
+
+.nav-header{
+    border-top: 3px solid #5271ff;
+    border-bottom: 5px solid #5271ff;
+}
+
+.link-box{
+    gap: 1rem;
+    margin-left: 1rem;
+}
+
+.link-header{
+    font-size: 1.25rem;
+}
+
+.main{
+    background-color: white;
+}
+
+.figura{
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
