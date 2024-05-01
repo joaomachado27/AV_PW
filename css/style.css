@@ -5,6 +5,7 @@ body{
 
 main{
     background-color: #e5e5e5;
+    padding: 0 20px;
 }
 
 .logo-uepa{
@@ -38,5 +39,10 @@ main{
 
 .figura{
     margin-top: 4rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+footer{
+    background-color: #312783;
+    color: #fff;
 }
