@@ -17,6 +17,10 @@ main{
     color: #007bff;
 }
 
+#subtitulo-carrosel{
+    margin-top: 2rem;
+}
+
 .subtitulo{
     width: 100%;
     padding: 1rem 3rem;
