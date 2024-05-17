@@ -8,6 +8,25 @@ main{
     padding: 0 20px;
 }
 
+footer{
+    background-color: #312783;
+    color: #fff;
+}
+
+svg{
+    width: 30px;
+    height: 30px;
+}
+
+.nav-header{
+    border-top: 3px solid #5271ff;
+    border-bottom: 5px solid #5271ff;
+}
+
+.main{
+    background-color: white;
+}
+
 .titulo-jumb{
     margin-top: 2rem;
 }
@@ -17,8 +36,16 @@ main{
     color: #007bff;
 }
 
-#subtitulo-carrosel{
-    margin-top: 2rem;
+.titulo-form{
+    border-top: 2px solid red; 
+    border-bottom: 2px solid red;
+    background-color: #312783; 
+    color: #fff;
+}
+
+#titulo-ouvidoria{
+    background-color: #5271ff; 
+    width: 100%;
 }
 
 .subtitulo{
@@ -28,14 +55,18 @@ main{
     margin-bottom: 1rem;
 }
 
+#subtitulo-carrosel{
+    margin-top: 2rem;
+}
+
 .texto{
     width: 100%;
     padding: 1rem 3rem;
 }
 
-.botao{
-    align-self: flex-start;
-    margin: 1rem 0 2rem 3rem;
+.figura{
+    margin-top: 4rem;
+    margin-bottom: 2.5rem;
 }
 
 .logo-uepa{
@@ -48,10 +79,9 @@ main{
     height:115px;
 }
 
-
-.nav-header{
-    border-top: 3px solid #5271ff;
-    border-bottom: 5px solid #5271ff;
+.botao{
+    align-self: flex-start;
+    margin: 1rem 0 2rem 3rem;
 }
 
 .link-box{
@@ -61,23 +91,4 @@ main{
 
 .link-header{
     font-size: 1.25rem;
-}
-
-.main{
-    background-color: white;
-}
-
-.figura{
-    margin-top: 4rem;
-    margin-bottom: 2.5rem;
-}
-
-footer{
-    background-color: #312783;
-    color: #fff;
-}
-
-svg{
-    width: 30px;
-    height: 30px;
 }
