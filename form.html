@@ -27,11 +27,14 @@
                   <a class="nav-item nav-link link-header" href="https://paginas.uepa.br/ccnt/">CCNT</a>
                   <a class="nav-item nav-link link-header" href="https://paginas.uepa.br/campusxix/index.php/campus-v-centro-de-ciencias-naturais-e-tecnologia-ccnt/">Contatos</a>
                   <a class="nav-item nav-link link-header" href="curso.html">Sobre o Curso</a>
+                  <a class="nav-item nav-link link-header" href="form.html">Fale Conosco</a>
                 </div>
             </div>
 
             <div class="text-right">
+              <a href="curso.html">
                 <img class="rounded logo-curso" src="img/logo-curso.png" alt="logo-curso">
+              </a>
             </div>
 
         </nav>
@@ -49,7 +52,7 @@
             <p class="h2">Formulário da Ouvidoria</p>
           </div>
 
-          <form>
+          <form class="needs-validation" id="form" name="form" novalidate>
             <div class="row justify-content-center align-items-center">
               <div class="col-12">
                 <div class="p-2 my-4 text-center titulo-form">
@@ -61,7 +64,10 @@
                   <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-3 col-form-label">Nome</label>
                      <div class="col-sm-9">
-                      <input type="text" class="form-control" id="inputEmail3" placeholder="Seu Nome Completo" autofocus required>
+                      <input type="text" class="form-control" id="Nome" name="Nome" placeholder="Seu Nome Completo" autofocus required>
+                      <div class="invalid-feedback">
+                        Nome em Branco
+                      </div>
                     </div>
                   </div>
                   <div class="form-group row">
@@ -70,7 +76,10 @@
                       <div class="input-group-prepend">
                         <div class="input-group-text">@</div>
                       </div>
-                      <input type="email" class="form-control" id="inlineFormInputGroup" placeholder="email@exemplo.com" required>
+                      <input type="email" class="form-control" id="Email" name="Email" placeholder="email@exemplo.com" required>
+                      <div class="invalid-feedback">
+                        Email Inválido
+                      </div>
                     </div>
                   </div>
               </div>
@@ -84,19 +93,26 @@
               <div class="col-12">
                 <div class="form-group row">
                   <label for="inputEmail3" class="col-sm-3 col-form-label">Tipo de Manifestação</label>
-                  <select class="col-sm-9 form-control" id="exampleFormControlSelect1" required>
-                    <option>Selecione</option>
-                    <option>Denúcia</option>
-                    <option>Elogio</option>
-                    <option>Informação</option>
-                    <option>Reclamação</option>
-                    <option>Solicitação</option>
-                    <option>Sugestão</option>
-                  </select>
+                  <div class="col-sm-9">
+                    <select class="form-control" id="Tipo" name="Tipo" required>
+                      <option value="">Selecione Aqui</option>
+                      <option value="1">Denúcia</option>
+                      <option value="2">Elogio</option>
+                      <option value="3">Informação</option>
+                      <option value="4">Reclamação</option>
+                      <option value="5">Solicitação</option>
+                      <option value="6">Sugestão</option>
+                    </select>
+                    <div class="invalid-feedback">Seleção Inválida</div>
+                  </div>
+                  
                 </div>
                 <div class="form-group row">
                   <label for="inputPassword3" class="col-sm-3 col-form-label">Manifestação</label>
-                  <textarea class="col-sm-9 form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                  <div class="col-sm-9">
+                    <textarea class="form-control" id="Texto" name="Texto" rows="3" required></textarea>
+                    <div class="invalid-feedback">Manifestação em Branco</div>
+                  </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-9">
@@ -162,7 +178,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script type="module" src="js/script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 

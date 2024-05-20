@@ -1,19 +1,17 @@
-document.querySelector('input[type=email').oninvalid = function(){
-    // remove mensagens de erro antigas
-    this.setCustomValidity("");
-
-    // reexecuta a validação
-    if(!this.validity.valid){
-
-        // se inválido, coloca mensagem de erro
-        this.setCustomValidity("Email inválido");
-    }
-};
-
-/*document.querySelector('#form-busca').onsubmit = function(){
-    if (document.querySelector('#q').value == ''){
-        document.querySelector('#q').style.border = '1px solid red';
-        return false;
-    }
-}
-*/
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Pega todos os formulários que nós queremos aplicar estilos de validação Bootstrap personalizados.
+      var forms = document.getElementsByClassName('needs-validation');
+      // Faz um loop neles e evita o envio
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();    
