@@ -1,14 +1,139 @@
+<?php
+  include "db/banco.php";
+  include "db/connection.php";
+
+  $banco = new Banco($servername, $username, $password, $dbname);
+
+  $sql = "SELECT * FROM formulario";
+  $result = $banco->select($sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Sobre o Curso</title>
+    <script>
+      (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+      // Pega todos os formulários que nós queremos aplicar estilos de validação Bootstrap personalizados.
+      var forms = document.getElementsByClassName('needs-validation');
+      // Faz um loop neles e evita o envio
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+        });
+        }, false);
+        })();    
+    </script>
+    <style>
+      body{
+      margin: 0;
+      padding: 0;
+      }
+
+      main{
+      background-color: #e5e5e5;
+      padding: 0 20px;
+      }
+
+      footer{
+      background-color: #312783;
+      color: #fff;
+      }
+
+      svg{
+      width: 30px;
+      height: 30px;
+      }
+
+        .nav-header{
+            border-top: 3px solid #5271ff;
+            border-bottom: 5px solid #5271ff;
+        }
+
+        .main{
+            background-color: white;
+        }
+
+        .titulo-jumb{
+            margin-top: 2rem;
+        }
+
+        .titulo{
+            font-weight: 500;
+            color: #007bff;
+        }
+
+        .titulo-form{
+            border-top: 2px solid red; 
+            border-bottom: 2px solid red;
+            background-color: #312783; 
+            color: #fff;
+        }
+
+        #titulo-ouvidoria{
+            background-color: #5271ff; 
+            width: 100%;
+        }
+
+        .subtitulo{
+            width: 100%;
+            padding: 1rem 3rem;
+            border-bottom: 1.75px groove black;
+            margin-bottom: 1rem;
+        }
+
+        #subtitulo-carrosel{
+            margin-top: 2rem;
+        }
+
+        .texto{
+            width: 100%;
+            padding: 1rem 3rem;
+        }
+
+        .figura{
+            margin-top: 4rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo-uepa{
+            width: 185px;
+            height: 95px;
+        }
+
+        .logo-curso{
+            width: 225px;
+            height:115px;
+        }
+
+        .botao{
+            align-self: flex-start;
+            margin: 1rem 0 2rem 3rem;
+        }
+
+        .link-box{
+            gap: 1rem;
+            margin-left: 1rem;
+        }
+
+        .link-header{
+            font-size: 1.035rem;
+        }
+
+    </style>
+    <title>Página Administrativa</title>
 </head>
 <body>
-
     <header>
         <nav class="navbar navbar-expand-lg navbar-light nav-header">
 
@@ -27,14 +152,15 @@
                   <a class="nav-item nav-link link-header" href="https://paginas.uepa.br/ccnt/">CCNT</a>
                   <a class="nav-item nav-link link-header" href="https://paginas.uepa.br/campusxix/index.php/campus-v-centro-de-ciencias-naturais-e-tecnologia-ccnt/">Contatos</a>
                   <a class="nav-item nav-link link-header" href="curso.html">Sobre o Curso</a>
-                  <a class="nav-item nav-link link-header" href="form.html">Fale Conosco</a>
+                  <a class="nav-item nav-link link-header" href="form.php">Fale Conosco</a>
+                  <a class="nav-item nav-link link-header" href="administrativo.php">Administrativo</a>
                 </div>
             </div>
 
             <div class="text-right">
-              <a href="index.html">
-                <img class="rounded logo-curso" src="img/logo-curso.png" alt="logo-curso">
-              </a>
+                <a href="index.html">
+                    <img class="rounded logo-curso" src="img/logo-curso.png" alt="logo-curso">
+                </a>
             </div>
 
         </nav>
@@ -44,86 +170,53 @@
     <main>
         <div class="container d-flex flex-column align-items-center main">
 
-          <div class="jumbotron titulo-jumb">
-            <h1 class="display-4 titulo">Bacharelado em Ciência de Dados</h1>
-          </div>
-            
-          <div class="py-2 text-center" id="titulo-ouvidoria">
-            <p class="h2">Formulário da Ouvidoria</p>
-          </div>
-
-          <form class="needs-validation" id="form" name="form" novalidate>
-            <div class="row justify-content-center align-items-center">
-              <div class="col-12">
-                <div class="p-2 my-4 text-center titulo-form">
-                  <p class="h5">Seus Dados Pessoais</p>
-                </div>
-              </div>
-
-              <div class="col-12">
-                  <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-3 col-form-label">Nome</label>
-                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="Nome" name="Nome" placeholder="Seu Nome Completo" autofocus required>
-                      <div class="invalid-feedback">
-                        Nome em Branco
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-3 col-form-label">Email</label>
-                    <div class="col-sm-9 input-group mb-2">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">@</div>
-                      </div>
-                      <input type="email" class="form-control" id="Email" name="Email" placeholder="email@exemplo.com" required>
-                      <div class="invalid-feedback">
-                        Email Inválido
-                      </div>
-                    </div>
-                  </div>
-              </div>
-
-              <div class="col-12">
-                <div class="p-2 my-4 text-center titulo-form">
-                  <p class="h5">Sua Manifestação</p>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="form-group row">
-                  <label for="inputEmail3" class="col-sm-3 col-form-label">Tipo de Manifestação</label>
-                  <div class="col-sm-9">
-                    <select class="form-control" id="Tipo" name="Tipo" required>
-                      <option value="">Selecione Aqui</option>
-                      <option value="1">Denúcia</option>
-                      <option value="2">Elogio</option>
-                      <option value="3">Informação</option>
-                      <option value="4">Reclamação</option>
-                      <option value="5">Solicitação</option>
-                      <option value="6">Sugestão</option>
-                    </select>
-                    <div class="invalid-feedback">Seleção Inválida</div>
-                  </div>
-                  
-                </div>
-                <div class="form-group row">
-                  <label for="inputPassword3" class="col-sm-3 col-form-label">Manifestação</label>
-                  <div class="col-sm-9">
-                    <textarea class="form-control" id="Texto" name="Texto" rows="3" required></textarea>
-                    <div class="invalid-feedback">Manifestação em Branco</div>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-sm-9">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                  </div>
-                </div>
-              </div>
-              
+            <div class="jumbotron titulo-jumb">
+                <h1 class="display-4 titulo">Bacharelado em Ciência de Dados</h1>
             </div>
-          </form>
-        </div>    
+            
+            <div class="py-2 text-center" id="titulo-ouvidoria">
+                <p class="h2">Página Administrativa</p>
+            </div>
+
+            <div class="container my-4">
+
+                <?php
+                $i = 0;
+                while($row = mysqli_fetch_assoc($result)){
+                ?>
+
+                    <div class="row" <?php if($i % 2 == 0) echo("style= \" background-color: #E1E1E1\""); ?>>
+                        
+                        <div class="col-1">
+                            <?php echo($row["id"]); ?>
+                        </div>
+                        <div class="col-2">
+                            <?php echo($row["nome"]); ?>
+                        </div>
+                        <div class="col-3">
+                            <?php echo($row["email"]); ?>
+                        </div>
+                        <div class="col-2">
+                            <?php echo($row["tipo"]); ?>
+                        </div>
+                        <div class="col-4">
+                            <?php echo($row["texto"]); ?>
+                        </div>
+
+                    </div>
+
+                <?php
+                $i++;
+                }
+                ?>
+
+                <a class="btn btn-primary my-4 botao" role="button" href="index.html">
+                    Clique aqui para voltar para a Home
+                </a>
+
+            
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -178,8 +271,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
-
+    <script type="module" src="js/script.js"></script>
 </body>
-
 </html>

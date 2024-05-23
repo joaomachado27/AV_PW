@@ -1,13 +1,152 @@
+<?php
+  include "db/banco.php";
+  include "db/connection.php";
+
+  $banco = new Banco($servername, $username, $password, $dbname);
+
+  if (isset($_POST["BtnEnviar"])) {
+
+    $nomeForm = $_POST["NomeForm"];
+    $emailForm = $_POST["EmailForm"];
+    $tipoForm = $_POST["TipoForm"];
+    $textoForm = $_POST["TextoForm"];
+
+    $sql = "INSERT INTO formulario (nome, email, tipo, texto)" . "VALUES ('$nomeForm', '$emailForm', '$tipoForm', '$textoForm')";
+
+    $banco->SQL($sql);
+  }
+
+  $sql = "SELECT * FROM formulario";
+  $result = $banco->select($sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Página Inicial</title>
+    <script>
+      (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+      // Pega todos os formulários que nós queremos aplicar estilos de validação Bootstrap personalizados.
+      var forms = document.getElementsByClassName('needs-validation');
+      // Faz um loop neles e evita o envio
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();    
+    </script>
+    <style>
+      body{
+      margin: 0;
+      padding: 0;
+      }
+
+      main{
+      background-color: #e5e5e5;
+      padding: 0 20px;
+      }
+
+      footer{
+      background-color: #312783;
+      color: #fff;
+      }
+
+      svg{
+      width: 30px;
+      height: 30px;
+      }
+
+.nav-header{
+    border-top: 3px solid #5271ff;
+    border-bottom: 5px solid #5271ff;
+}
+
+.main{
+    background-color: white;
+}
+
+.titulo-jumb{
+    margin-top: 2rem;
+}
+
+.titulo{
+    font-weight: 500;
+    color: #007bff;
+}
+
+.titulo-form{
+    border-top: 2px solid red; 
+    border-bottom: 2px solid red;
+    background-color: #312783; 
+    color: #fff;
+}
+
+#titulo-ouvidoria{
+    background-color: #5271ff; 
+    width: 100%;
+}
+
+.subtitulo{
+    width: 100%;
+    padding: 1rem 3rem;
+    border-bottom: 1.75px groove black;
+    margin-bottom: 1rem;
+}
+
+#subtitulo-carrosel{
+    margin-top: 2rem;
+}
+
+.texto{
+    width: 100%;
+    padding: 1rem 3rem;
+}
+
+.figura{
+    margin-top: 4rem;
+    margin-bottom: 2.5rem;
+}
+
+.logo-uepa{
+    width: 185px;
+    height: 95px;
+}
+
+.logo-curso{
+    width: 225px;
+    height:115px;
+}
+
+.botao{
+    align-self: flex-start;
+    margin: 1rem 0 2rem 3rem;
+}
+
+.link-box{
+    gap: 1rem;
+    margin-left: 1rem;
+}
+
+.link-header{
+    font-size: 1.035rem;
+}
+
+    </style>
+    <title>Sobre o Curso</title>
 </head>
 <body>
+
     <header>
         <nav class="navbar navbar-expand-lg navbar-light nav-header">
 
@@ -32,9 +171,9 @@
             </div>
 
             <div class="text-right">
-                <a href="index.html">
-                    <img class="rounded logo-curso" src="img/logo-curso.png" alt="logo-curso">
-                </a>
+              <a href="index.html">
+                <img class="rounded logo-curso" src="img/logo-curso.png" alt="logo-curso">
+              </a>
             </div>
 
         </nav>
@@ -44,31 +183,86 @@
     <main>
         <div class="container d-flex flex-column align-items-center main">
 
-            <div class="jumbotron titulo-jumb">
-                <h1 class="display-4 titulo">Bacharelado em Ciência de Dados</h1>
-                </div>
+          <div class="jumbotron titulo-jumb">
+            <h1 class="display-4 titulo">Bacharelado em Ciência de Dados</h1>
+          </div>
             
-            <figure class="figure figura">
-                <img src="img/imagem-cienciadedados1.jpeg" class="figure-img img-fluid rounded" alt="campus ananindeua" width="600">
-                <figcaption class="figure-caption">Apresentação do curso ciência de dados.</figcaption>
-            </figure>
+          <div class="py-2 text-center" id="titulo-ouvidoria">
+            <p class="h2">Formulário da Ouvidoria</p>
+          </div>
 
-            <p class="h4 subtitulo">Apresentação</p>
-            <p class="text-justify mx-5">
-                A Ciência de Dados é um campo amplo e em constante evolução. Novas técnicas e ferramentas estão sendo desenvolvidas o tempo todo, o que significa que há sempre algo novo para aprender. Se você é curioso e gosta de trabalhar com dados, a Ciência de Dados pode ser a carreira perfeita para você.
-                Os Cientistas de Dados são solucionadores de problemas. Eles usam suas habilidades para identificar problemas, coletar dados, analisar dados e comunicar resultados. Os Cientistas de Dados são membros valiosos de qualquer equipe e podem ter um impacto real nas organizações.
-            </p>
-            <p class="h4 subtitulo">Atuação</p>
-            <p class="text-justify mx-5">
-                Cientistas de dados utilizam essas técnicas para resolver problemas complexos. O mercado de trabalho para Ciência de Dados está em rápido crescimento. A demanda por Cientistas de Dados é alta em diversos setores, e os salários são competitivos.
-                <br>
-                <br>
-                Clique no botão abaixo para mais informações sobre a estrutura do curso:
-            </p>
+          <form class="needs-validation" method="post" id="Form" name="Form" action="form.php" novalidate>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-12">
+                <div class="p-2 my-4 text-center titulo-form">
+                  <p class="h5">Seus Dados Pessoais</p>
+                </div>
+              </div>
 
-            <a class="btn btn-primary botao" role="button" href="curso.html">Clique aqui</a>
-        
-        </div>
+              <div class="col-12">
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Nome</label>
+                     <div class="col-sm-9">
+                      <input type="text" class="form-control" id="NomeForm" name="NomeForm" placeholder="Seu Nome Completo" autofocus required>
+                      <div class="invalid-feedback">
+                        Nome em Branco
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-9 input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">@</div>
+                      </div>
+                      <input type="email" class="form-control" id="EmailForm" name="EmailForm" placeholder="email@exemplo.com" required>
+                      <div class="invalid-feedback">
+                        Email Inválido
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="col-12">
+                <div class="p-2 my-4 text-center titulo-form">
+                  <p class="h5">Sua Manifestação</p>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-group row">
+                  <label for="inputEmail3" class="col-sm-3 col-form-label">Tipo de Manifestação</label>
+                  <div class="col-sm-9">
+                    <select class="form-control" id="TipoForm" name="TipoForm" required>
+                      <option value="">Selecione Aqui</option>
+                      <option value="Denúcia">Denúcia</option>
+                      <option value="Elogio">Elogio</option>
+                      <option value="Informação">Informação</option>
+                      <option value="Reclamação">Reclamação</option>
+                      <option value="Solicitação">Solicitação</option>
+                      <option value="Sugestão">Sugestão</option>
+                    </select>
+                    <div class="invalid-feedback">Seleção Inválida</div>
+                  </div>
+                  
+                </div>
+                <div class="form-group row">
+                  <label for="inputPassword3" class="col-sm-3 col-form-label">Manifestação</label>
+                  <div class="col-sm-9">
+                    <textarea class="form-control" id="TextoForm" name="TextoForm" rows="3" required></textarea>
+                    <div class="invalid-feedback">Manifestação em Branco</div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-9">
+                    <button type="submit" id="BtnEnviar" name="BtnEnviar" class="btn btn-primary">Enviar</button>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </form>
+        </div>    
     </main>
 
     <footer>
@@ -123,6 +317,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script type="module" src="js/script.js"></script>
+
 </body>
+
 </html>
