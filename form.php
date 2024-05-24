@@ -162,8 +162,8 @@
                 <div class="navbar-nav link-box">
                   <a class="nav-item nav-link link-header" href="index.html">Home</a>
                   <a class="nav-item nav-link link-header" href="https://www.uepa.br/">UEPA</a>
-                  <a class="nav-item nav-link link-header" href="https://paginas.uepa.br/ccnt/">CCNT</a>
-                  <a class="nav-item nav-link link-header" href="https://paginas.uepa.br/campusxix/index.php/campus-v-centro-de-ciencias-naturais-e-tecnologia-ccnt/">Contatos</a>
+                  <a class="nav-item nav-link link-header" href="https://ccnt.uepa.br/">CCNT</a>
+                  <a class="nav-item nav-link link-header" href="https://ccnt.uepa.br/">Contatos</a>
                   <a class="nav-item nav-link link-header" href="curso.html">Sobre o Curso</a>
                   <a class="nav-item nav-link link-header" href="form.php">Fale Conosco</a>
                   <a class="nav-item nav-link link-header" href="administrativo.php">Administrativo</a>
@@ -287,7 +287,7 @@
                             </li>
                             <li class="list-inline-item">
                                 <a href="https://www.twitter.com/uepaoficial">
-                                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M459.4 151.7c.325 4.548 .325 9.097 .325 13.65 0 138.7-105.6 298.6-298.6 298.6-59.45 0-114.7-17.22-161.1-47.11 8.447 .974 16.57 1.299 25.34 1.299 49.06 0 94.21-16.57 130.3-44.83-46.13-.975-84.79-31.19-98.11-72.77 6.498 .974 12.99 1.624 19.82 1.624 9.421 0 18.84-1.3 27.61-3.573-48.08-9.747-84.14-51.98-84.14-102.1v-1.299c13.97 7.797 30.21 12.67 47.43 13.32-28.26-18.84-46.78-51.01-46.78-87.39 0-19.49 5.197-37.36 14.29-52.95 51.65 63.67 129.3 105.3 216.4 109.8-1.624-7.797-2.599-15.92-2.599-24.04 0-57.83 46.78-104.9 104.9-104.9 30.21 0 57.5 12.67 76.67 33.14 23.72-4.548 46.46-13.32 66.6-25.34-7.798 24.37-24.37 44.83-46.13 57.83 21.12-2.273 41.58-8.122 60.43-16.24-14.29 20.79-32.16 39.31-52.63 54.25z"></path></svg>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/></svg>
                                 </a>
                             </li>
                             <li class="list-inline-item">

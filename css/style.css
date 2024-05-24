@@ -69,6 +69,10 @@ svg{
     margin-bottom: 2.5rem;
 }
 
+#tabela{
+    margin-top: 2rem;
+}
+
 .logo-uepa{
     width: 185px;
     height: 95px;
@@ -91,4 +95,16 @@ svg{
 
 .link-header{
     font-size: 1.035rem;
+}
+
+.estrutura-scroll{
+    position: relative;
+    height: 400px;
+    margin-top: .5rem;
+    overflow: auto;
+}
+
+.adm{
+    text-align: justify;
+    align-self: center;
 }
