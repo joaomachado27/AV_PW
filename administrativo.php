@@ -130,6 +130,11 @@
             font-size: 1.035rem;
         }
 
+        .adm{
+            text-align: justify;
+            align-self: center;
+        }
+
     </style>
     <title>Página Administrativa</title>
 </head>
@@ -150,7 +155,7 @@
                   <a class="nav-item nav-link link-header" href="index.html">Home</a>
                   <a class="nav-item nav-link link-header" href="https://www.uepa.br/">UEPA</a>
                   <a class="nav-item nav-link link-header" href="https://ccnt.uepa.br/">CCNT</a>
-                  <a class="nav-item nav-link link-header" href="https://ccnt.uepa.br/">Contatos</a>
+                  <a class="nav-item nav-link link-header" href="https://ccnt.uepa.br/campus-xxii-ananindeua/">Contatos</a>
                   <a class="nav-item nav-link link-header" href="curso.html">Sobre o Curso</a>
                   <a class="nav-item nav-link link-header" href="form.php">Fale Conosco</a>
                   <a class="nav-item nav-link link-header" href="administrativo.php">Administrativo</a>
@@ -278,9 +283,9 @@
                     </div>
                 </div>
                 
-                <div class="col-6 col-md-4">
+                <div class="col-6 col-md-5">
                     <div class="container text-center">
-                        &copy; João Machado and Maurício Câncio
+                        &copy; João Vitor Machado / Maurício Câncio da Cunha
                     </div>
                 </div>
             
